@@ -4,7 +4,10 @@ const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 
 app.use(express.json())
-mongoose.connect('mongodb://localhost:27017/app-db')
+mongoose.connect('mongodb://localhost:27017/app-db',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
 const users = []
 
 app.get('/users',(req, res) => {
