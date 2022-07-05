@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express()
 const bcrypt = require('bcrypt')
+const mongoose = require('mongoose')
 
 app.use(express.json())
-
+mongoose.connect('mongodb://localhost:27017/app-db')
 const users = []
 
 app.get('/users',(req, res) => {
